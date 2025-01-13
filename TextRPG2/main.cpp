@@ -17,14 +17,29 @@ int main()
 		pMainApp->Update();
 		pMainApp->Render();
 		
-		if (pGameManager->Key_Down('A')) {
-			cout << "A key Test" << endl;
-			system("pause");
+		if (pGameManager->Key_Down('A'))
+		{
+			cout << "A keyDown Test" << endl;
+			//system("pause");
 		}
 
-		while (!IsAnyKeyPressed())
-			Sleep(10);
-		
+		if (pGameManager->Key_Pressing('S'))
+		{
+			cout << "S keyPressing Test" << endl;
+			//system("pause");
+		}
+
+		if (pGameManager->Key_Up('D'))
+		{
+			cout << "D keyUp Test" << endl;
+			//system("pause");
+		}
+
+		if (pGameManager->KeyPressedThisFrame())
+		{
+			system("pause");
+		}
+			
 		system("cls");
 	}
 }

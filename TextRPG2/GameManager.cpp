@@ -74,6 +74,11 @@ void GameManager::Render()
 	m_pLevel_Manager->Render();
 }
 
+bool GameManager::KeyPressedThisFrame()
+{
+	return m_pInput_Manager->KeyPressedThisFrame();
+}
+
 bool GameManager::Key_Pressing(unsigned int _iKey)
 {
 	return m_pInput_Manager->Key_Pressing(_iKey);

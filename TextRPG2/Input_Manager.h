@@ -15,6 +15,8 @@ public:
     bool Key_Down(unsigned int _iKey);
     bool Key_Up(unsigned int _iKey);
 
+    bool KeyPressedThisFrame();
+    
 public:
     void Update(void);
 

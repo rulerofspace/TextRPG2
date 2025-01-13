@@ -16,6 +16,8 @@ public: /* For.Base */
 	void Render();
 
 public: /* For.Input_Manager */
+	bool KeyPressedThisFrame();
+
 	bool Key_Pressing(unsigned int _iKey);
 	bool Key_Down(unsigned int _iKey);
 	bool Key_Up(unsigned int _iKey);

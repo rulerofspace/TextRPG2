@@ -40,6 +40,17 @@ bool Input_Manager::Key_Up(unsigned int _iKey)
     return (!m_bKeyState[_iKey] && (m_byPrevKeyState[_iKey] & 0x8000));
 }
 
+bool Input_Manager::KeyPressedThisFrame()
+{
+    // 현재 키 상태에서 눌려진 키가 하나라도 있으면 true를 반환
+    for (int i = 0; i < 256; ++i) 
+    {
+        if (m_bKeyState[i])
+            return true;
+    }
+    return false;
+}
+
 void Input_Manager::Free()
 {
     delete this;
