@@ -1,17 +1,18 @@
 #include <iostream>
 #include "Character.h"
 
-Character* Character::Instance = nullptr;
+Character *Character::Instance = nullptr;
 
 Character::Character(string name)
     : Name(name), Level(1), Health(200),
-    MaxHealth(200), Attack(30), Experience(0), Gold(0)
+      MaxHealth(200), Attack(30), Experience(0), Gold(0), MaxExperience(0), MaxLevel(10)
 {
 }
 
-Character* Character::GetInstance(string name)
+Character *Character::GetInstance(string name)
 {
-    if (!Instance && !name.empty()) {
+    if (!Instance && !name.empty())
+    {
         Instance = new Character(name);
     }
     return Instance;
@@ -30,6 +31,7 @@ int Character::GetLevel()
 void Character::SetLevel(int level)
 {
     Level = level;
+    return Level;
 }
 
 double Character::GetHealth()
@@ -66,7 +68,8 @@ void Character::SetAttack(double attack)
 void Character::TakeDamage(double damage)
 {
     Health -= damage;
-    if (Health < 0) Health = 0;
+    if (Health < 0)
+        Health = 0;
 }
 
 double Character::GetExperience()
@@ -112,7 +115,10 @@ void Character::LevelUp()
         MaxExperience += 10;
         cout << "\nLevel up! 현재 레벨은 " << Level << "입니다.\n";
     }
-    if (Level == MaxLevel) { cout << "\n현재 최대 레벨입니다.\n"; }
+    if (Level == MaxLevel)
+    {
+        cout << "\n현재 최대 레벨입니다.\n";
+    }
 }
 
 void Character::UseItem(int index)
