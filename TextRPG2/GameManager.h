@@ -8,10 +8,15 @@ using namespace std;
 
 class GameManager
 {
+private:
+	static GameManager* Instance;
+
 public:
+	static GameManager* GetInstance();
+
 	IMonster* GenerateMonster(int level);
 
-	void battle(Character* player);
+	void Battle(Character* player);
 
 	void VisitShop(Character* player);
 

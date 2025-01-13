@@ -3,9 +3,20 @@
 #include "Character.h"
 #include "IMonster.h"
 
-IMonster* GenerateMonster(int level)
+GameManager* GameManager::Instance = nullptr;
+
+GameManager* GameManager::GetInstance()
 {
-	if (level % 10 == 0)
+	if (Instance == nullptr)
+	{
+		Instance = new GameManager();
+	}
+	return Instance;
+}
+
+IMonster* GameManager::GenerateMonster(int level)
+{
+	/*if (level % 10 == 0)
 	{
 		cout << "보스 몬스터를 조우했습니다.\n";
 		switch (level % 40)
@@ -26,13 +37,13 @@ IMonster* GenerateMonster(int level)
 		case 2: return new Goblin(level); break;
 		case 3: return new Orc(level); break;
 		}
-	}
+	}*/
 }
 
-void battle(Character* player)
+void GameManager::Battle(Character* player)
 {
 	int level = player->GetLevel();
-	GenerateMonster(level);
+	GameManager::GenerateMonster(level);
 	while (true)
 	{
 		cout << "\n메뉴\n1. 스탯 창 보기     2. 아이템 사용     3. 전투하기     4.도망가기\n";
@@ -64,12 +75,12 @@ void battle(Character* player)
 
 }
 
-void VisitShop(Character* player)
+void GameManager::VisitShop(Character* player)
 {
 
 }
 
-void Exit()
+void GameManager::Exit()
 {
 
 }
