@@ -1,5 +1,5 @@
 #include "Level_Logo.h"
-
+#include "Level_Main.h"
 #include "GameManager.h"
 
 Level_Logo::Level_Logo()
@@ -27,52 +27,25 @@ void Level_Logo::Initialize()
 	     `      `` `    `    `    `  ``  ``         ` ``   ``  `      ``     ```     ``   ``             `                `  ##`        `` ` ` ` ``  ``````````````````````` 
                                                                                                                                 `##
 )";
-	
+
+	m_strStart = R"(
+		                                                                   Press A To Start                                                                            
+)";
 }
 
 void Level_Logo::Update()
 {
-	cout << m_strLogo << endl;
+	/* ´­·¶À» ¶§ */
+	if (m_pGameManager->Key_Down('A'))
+		m_pGameManager->Change_Level(Level_Main::Create());
 }
 
 void Level_Logo::Render()
 {
-	//m_pGameManager->Render_Text(m_iLevelIndex, "Logo");
+	cout << m_strLogo << endl << endl << endl;
 
-	//_int iNumInput = 0;
-	//cout << "1. Level_Library			2. Level_Input" << endl << endl;
-
-	//while (iNumInput <= 0 || iNumInput > 2)
-	//	cin >> iNumInput;
-
-	//if (iNumInput == 1)
-	//	m_pGameInstance->Change_Level(CLevel_Library::Create());
-	//else
-	//	m_pGameInstance->Change_Level(CLevel_Input::Create());
-
+	cout << m_strStart << endl;
 }
-
-//HRESULT Level_Logo::Ready_Texts()
-//{
-//	m_pGameInstance->Add_Text(m_iLevelIndex, "Logo", R"(
-//	` `   `       ` ` ``                                                              ``     ` `  `  `                       ``          ``                                  
-//	`   `         ` `` `                                                            ```      ` `   `                        `##`        `           `                        
-//	  ##` `       `##  `                                                            `##   `` `########``  ` ````````` `   `  ## `      `##########```   `#################   
-//	  ##` `       `##  `                                                            `##   ``### ` `` ##`  `###########`   `  ##      ```##`       ``     ```   `##` `   ```  
-//	  ##` `       `##  ` ``````##``     ````` `### `` ` ``##`  ``   ` ` `##```  `   `##   `  ` ``    `##           `##`   `  ##`       `##                      ##```        
-//	  ##` `       `##  ` #####` `###```  `####````   `###` `####   ` `##`` `###`    `##             `###         ` ##``   `  ##`        ## ``#`` ``           `####`` ``     
-//	  ##` `       `##  ` ### `   ``##` ` `##``` ` ` ### `` ` ``##``` `  `  `  ##`   `##             `##  `        ##`     `  ##`       `###````###` `        ###  ###`       
-//	  ##` `       `##  ` ##```     ##`   `##`     ``##` `````` `##   ``` `````##`   `##          ``##`         ``##`      `  ##`      ``` ``     ##``   ` `###`     ###`     
-//	  ##``       ``##    ##```     ##`   `##       `##############`  `####````##`   `##        ` ###``    `    ### `      `  ##`                 `##` ` ####`   ` `   `####` 
-//	  ###``       `##  ` ##```     ##`   `##      ` ##``         ` `###  `  ``##`   `##      ` ### ` `      `###`  `      `  ##`               ``###  ` `` `  ``##` ` ` `` ` 
-//	   ###``` ` ``##     ##```     ##`   `##        `###`  ``` #`   ### `   ``##`   `##    ``### ``    `  ####  `         `  ##`     `` `` ` `` ###``          `##`         `
-//	`   `#########`  `   ##```     ##`   `##        ` `#########   ```##########`   `##     ############`  ` `  `         `  ##`      ``#########````########################
-//	     `      `` `    `    `    `  ``  ``         ` ``   ``  `      ``     ```     ``   ``             `                `  ##`        `` ` ` ` ``  ``````````````````````` 
-//                                                                                                                                `##
-//)")))	return E_FAIL;
-//
-//	return S_OK;
-//}
 
 Level_Logo* Level_Logo::Create()
 {

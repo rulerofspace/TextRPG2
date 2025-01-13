@@ -1,6 +1,8 @@
 #include "Level.h"
+#include "GameManager.h"
 
 Level::Level()
+	: m_pGameManager{ GameManager::Get_Instance() }
 {
 }
 

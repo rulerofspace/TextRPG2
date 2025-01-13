@@ -12,34 +12,35 @@ int main()
 
 	GameManager* pGameManager = GameManager::Get_Instance();
 
+	bool bIsInit = false;
 	while (true)
 	{
 		pMainApp->Update();
 		pMainApp->Render();
 		
+		///* 눌렀을 때 */
 		if (pGameManager->Key_Down('A'))
-		{
 			cout << "A keyDown Test" << endl;
-			//system("pause");
-		}
 
-		if (pGameManager->Key_Pressing('S'))
-		{
-			cout << "S keyPressing Test" << endl;
-			//system("pause");
-		}
+		///* 누르고 있으면 */
+		//if (pGameManager->Key_Pressing('S'))
+		//	cout << "S keyPressing Test" << endl;
 
-		if (pGameManager->Key_Up('D'))
-		{
-			cout << "D keyUp Test" << endl;
-			//system("pause");
-		}
+		///* 업은 안먹는다 */
+		//if (pGameManager->Key_Up('D'))
+		//	cout << "D keyUp Test" << endl;
 
 		if (pGameManager->KeyPressedThisFrame())
 		{
 			system("pause");
 		}
-			
+		
+		if (bIsInit == false)
+		{
+			system("pause");
+			bIsInit = true;
+		}
+
 		system("cls");
 	}
 }

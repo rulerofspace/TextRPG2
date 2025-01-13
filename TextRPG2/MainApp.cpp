@@ -18,12 +18,6 @@ void MainApp::Initialize()
 
 void MainApp::Update()
 {
-	if (GetKeyState(VK_LEFT) & 0x8000)
-	{
-
-	}
-	//m_bCheckQuit = false;
-
 	m_pGameManager->Update();
 }
 

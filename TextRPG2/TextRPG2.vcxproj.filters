@@ -60,6 +60,9 @@
     <Filter Include="소스 파일\97.Default">
       <UniqueIdentifier>{a44bc811-c7ca-4192-85d0-a534687c6d3d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\01.Level\Level_Main">
+      <UniqueIdentifier>{d620cfaa-abfd-48dd-87d2-789921d933db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Orc.cpp">
@@ -109,6 +112,9 @@
     </ClCompile>
     <ClCompile Include="Input_Manager.cpp">
       <Filter>소스 파일\98.Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Level_Main.cpp">
+      <Filter>소스 파일\01.Level\Level_Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +168,9 @@
     </ClInclude>
     <ClInclude Include="Input_Manager.h">
       <Filter>소스 파일\98.Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Level_Main.h">
+      <Filter>소스 파일\01.Level\Level_Main</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

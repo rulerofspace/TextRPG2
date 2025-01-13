@@ -15,6 +15,9 @@ public: /* For.Base */
 	void Update();
 	void Render();
 
+	int* GetPlayerPosX() { return &m_iPlayerPosX; }
+	int* GetPlayerPosY() { return &m_iPlayerPosY; }
+
 public: /* For.Input_Manager */
 	bool KeyPressedThisFrame();
 
@@ -38,6 +41,9 @@ public:
 private:
 	class Level_Manager* m_pLevel_Manager{ nullptr };
 	class Input_Manager* m_pInput_Manager{ nullptr };
+
+	int m_iPlayerPosX{ 0 };
+	int m_iPlayerPosY{ 0 };
 public:
 	static GameManager* Create();
 	virtual void Free();

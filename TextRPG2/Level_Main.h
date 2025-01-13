@@ -3,11 +3,11 @@
 #include "Client_Defines.h"
 #include "Level.h"
 
-class Level_Logo final : public Level
+class Level_Main final : public Level
 {
 private:
-	Level_Logo();
-	virtual ~Level_Logo() = default;
+	Level_Main();
+	virtual ~Level_Main() = default;
 
 public:
 	virtual void Initialize() override;
@@ -15,12 +15,11 @@ public:
 	virtual void Render() override;
 
 private:
-	string m_strLogo;
-	string m_strStart;
+	char m_Map[MAP_HEIGHT][MAP_WIDTH];
 
-	int m_iPlayerPosX{ 0 };
-	int m_iPlayerPosY{ 0 };
+	int* m_pPlayerPosX{ nullptr };
+	int* m_pPlayerPosY{ nullptr };
 public:
-	static Level_Logo* Create();
+	static Level_Main* Create();
 	virtual void Free() override;
 };

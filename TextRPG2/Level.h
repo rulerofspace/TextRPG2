@@ -16,7 +16,8 @@ public:
 	unsigned int GetLevelIndex() const { return m_iLevelIndex; };
 
 protected:
-	class CGameInstance* m_pGameInstance = { nullptr };
+	class GameManager* m_pGameManager{ nullptr };
+
 	unsigned int   		 m_iLevelIndex = { 0 };
 
 public:
