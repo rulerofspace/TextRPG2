@@ -5,34 +5,34 @@
 class Orc : public IMonster
 {
 private:
-    /*
-    ìƒì„±ìë¥¼ private ìœ¼ë¡œ í•´ë²„ë¦¬ë©´ ë™ì í• ë‹¹ì´ ë§‰íŒë‹¤. ê°œë…ìˆ™ì§€
-    ê·¸ë˜ì„œ Createë¼ëŠ” í•¨ìˆ˜ë¥¼ ë§Œë“¤ì–´ì„œ ì§ì ‘ ìƒì„±í•˜ê²Œ í•  ìˆ˜ ìˆë‹¤.	*/
-    Orc();
-    virtual ~Orc() = default;
+	/*
+	»ı¼ºÀÚ¸¦ private À¸·Î ÇØ¹ö¸®¸é µ¿ÀûÇÒ´çÀÌ ¸·Èù´Ù. °³³ä¼÷Áö
+	±×·¡¼­ Create¶ó´Â ÇÔ¼ö¸¦ ¸¸µé¾î¼­ Á÷Á¢ »ı¼ºÇÏ°Ô ÇÒ ¼ö ÀÖ´Ù.	*/
+	Orc();
+	virtual ~Orc() = default;
 
-public: /* IMonster ë¶€ëª¨ í´ë˜ìŠ¤ì—ì„œ ë°›ì•„ì˜¨ í•¨ìˆ˜ë“¤ */
-    virtual void Initialize(string name, int health, int attack) override;
-    virtual void Update() override;
+public: /* IMonster ºÎ¸ğ Å¬·¡½º¿¡¼­ ¹Ş¾Æ¿Â ÇÔ¼öµé */
+	virtual void Initialize(string name, int health, int attack) override;
+	virtual void Update() override;
 
-public: /* ì‹¤ì œ ë™ì í• ë‹¹ì„ ëŒ€ì‹ í•´ì£¼ëŠ” í•¨ìˆ˜ */
-    static Orc *Create(string name, int health, int attack);
-    virtual void Free() override;
+public: /* ½ÇÁ¦ µ¿ÀûÇÒ´çÀ» ´ë½ÅÇØÁÖ´Â ÇÔ¼ö */
+	static Orc* Create(string name = "", int health = 10, int attack = 5);
+	virtual void Free() override;
 };
 
-/* ì´ë ‡ê²Œ publicìœ¼ë¡œ ìƒì„±ìì— ì¸ìê°’ì„ ë„£ì–´ì„œ ì´ˆê¸°í™”ê°€ ê¸°ë³¸
-*
+/* ÀÌ·¸°Ô publicÀ¸·Î »ı¼ºÀÚ¿¡ ÀÎÀÚ°ªÀ» ³Ö¾î¼­ ÃÊ±âÈ­°¡ ±âº»
+* 
 class Orc : public IMonster
 {
 public:
-        Orc(string name, int health, int attack);   <--------
-        virtual ~Orc() = default;
+		Orc(string name, int health, int attack);   <--------
+		virtual ~Orc() = default;
 
 public:
-    virtual void Initialize(string name, int health, int attack) override;
-    virtual void Update() override;
+	virtual void Initialize(string name, int health, int attack) override;
+	virtual void Update() override;
 
 public:
-    virtual void Free() override;
+	virtual void Free() override;
 };
 */

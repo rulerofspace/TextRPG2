@@ -131,7 +131,7 @@ void Character::AddGold(double amount) { Gold += amount; }
 void Character::AddItem(IItem* item)
 {
     for (int i = 0; i < Inventory.size(); i++) {
-        if (Inventory[i].first == item->GetName()) {
+        if (Inventory[i].first->GetName() == item->GetName()) {
             Inventory[i].second++;
             delete item;
             return;

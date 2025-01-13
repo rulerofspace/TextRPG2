@@ -1,24 +1,108 @@
 #include <iostream>
 #include "GameManager.h"
-#include "Character.h"
-#include "IMonster.h"
 #include "HealthPotion.h"
-#include "Troll.h"
-#include "Slime.h"
+#include "Level_Manager.h"
+#include "Input_Manager.h"
+#include "IMonster.h"
 #include "Goblin.h"
+#include "Slime.h"
+#include "Troll.h"
+#include "Level.h"
 #include "Orc.h"
 
-GameManager* GameManager::Instance = nullptr;
+IMPLEMENT_SINGLETON(GameManager)
 
-GameManager* GameManager::GetInstance()
+GameManager::GameManager()
 {
-	if (Instance == nullptr)
-	{
-		Instance = new GameManager();
-	}
-	return Instance;
+
 }
 
+void GameManager::Initialize()
+{
+	HINSTANCE hInstance = GetModuleHandle(nullptr);
+	HWND hWnd = GetConsoleWindow();
+
+	m_pLevel_Manager = Level_Manager::Create();
+
+	m_pInput_Manager = Input_Manager::Create(hInstance, hWnd);
+}
+
+//IMonster* GameManager::GenerateMonster(int level)
+//{
+//	switch (level % 4)
+//	{
+//	case 0: return Slime::Create(); break;
+//	case 1: return Goblin::Create(); break;
+//	case 2: return Orc::Create(); break;
+//	case 3: return Troll::Create(); break;
+//		// case : return new BossMonster(level); break;
+//	}
+//}
+
+void GameManager::VisitShop(Character* player)
+{
+
+}
+
+void GameManager::Exit()
+{
+
+
+}
+
+void GameManager::Update()
+{
+	m_pInput_Manager->Update();
+
+	m_pLevel_Manager->Update();
+}
+
+void GameManager::Render()
+{
+	m_pLevel_Manager->Render();
+}
+
+bool GameManager::KeyPressedThisFrame()
+{
+	return m_pInput_Manager->KeyPressedThisFrame();
+}
+
+bool GameManager::Key_Pressing(unsigned int _iKey)
+{
+	return m_pInput_Manager->Key_Pressing(_iKey);
+}
+
+bool GameManager::Key_Down(unsigned int _iKey)
+{
+	return m_pInput_Manager->Key_Down(_iKey);
+}
+
+bool GameManager::Key_Up(unsigned int _iKey)
+{
+	return m_pInput_Manager->Key_Up(_iKey);
+}
+
+void GameManager::Change_Level(Level* pNewLevel)
+{
+	if (nullptr == m_pLevel_Manager)
+		return;
+
+	m_pLevel_Manager->Change_Level(pNewLevel);
+}
+
+GameManager* GameManager::Create()
+{
+	GameManager* pInstance = new GameManager();
+
+	pInstance->Initialize();
+
+	return pInstance;
+}
+
+void GameManager::Free()
+{
+
+}
 IMonster* GameManager::GenerateMonster(int level)
 {
 	/*if (level % 10 == 0)
@@ -105,9 +189,13 @@ void GameManager::Battle(Character* player)
 		switch (choice)
 		{
 		case 1:
+		{
+
 			player->DisplayStatus();
 			break;
+		}
 		case 2:
+		{
 			player->Inventory.push_back(pair<IItem*, int>(hp, 1));
 			player->Inventory.push_back(pair<IItem*, int>(hp, 1));
 			player->DisplayInventory();
@@ -116,7 +204,9 @@ void GameManager::Battle(Character* player)
 			player->UseItem(index);
 
 			break;
+		}
 		case 3:
+		{
 			cout << "\n전투가 시작되었습니다.\n이번에 싸울 몬스터는 " << Monster->GetName()
 				<< " (체력: " << Monster->GetHealth() << ", 공격력: " << Monster->GetAttack() << ")\n";
 			
@@ -154,34 +244,27 @@ void GameManager::Battle(Character* player)
 					player->AddGold(gold);
 					cout << "\n전투에서 승리했습니다.\n50의 경험치와 " << gold << " 골드를 획득!\n";
 
-					Item* DroppedItem = Monster->DropItem();
-					if (DroppedItem) {
-						player->AddItem(DroppedItem); // 플레이어의 인벤토리에 아이템 추가
-						cout << "몬스터가 " << DroppedItem->getName() << "을 떨어뜨렸습니다.\n";
-					}
+					//IItem* DroppedItem = Monster->DropItem();
+					//if (DroppedItem) {
+					//	player->AddItem(DroppedItem); // 플레이어의 인벤토리에 아이템 추가
+					//	cout << "몬스터가 " << DroppedItem->getName() << "을 떨어뜨렸습니다.\n";
+					//}
 
 					player->LevelUp();
 					player->DisplayStatus();
 				}
-				delete Monster;
+				Monster->Free();
 			}
 			break;
+		}
 		case 4:
+		{
 
 			break;
+		}
 		default:
 			cout << "잘못된 입력입니다. 다시 시도해주세요.\n";
 		}
 	}
-
-}
-
-void GameManager::VisitShop(Character* player)
-{
-
-}
-
-void GameManager::Exit()
-{
 
 }
