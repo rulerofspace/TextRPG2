@@ -9,11 +9,11 @@ using namespace std;
 class GameManager
 {
 public:
-	IMonster *GenerateMonster(int level);
+	IMonster* GenerateMonster(int level);
 
-	bool battle(Character *player);
+	void battle(Character* player);
 
-	void VisitShop(Character *player);
+	void VisitShop(Character* player);
 
 	void Exit();
 };
