@@ -1,8 +1,10 @@
 #include "AttackBoost.h"
 
-AttackBoost::AttackBoost();
+AttackBoost::AttackBoost():Name("AttackBoostItem"), AttackIncrease(20)
+{
+}
 
-string AttackBoost::getName()
+string AttackBoost::GetName()
 {
     string InputName;
     cout << "사용할 아이템이 무엇입니까?" << endl;
@@ -11,6 +13,8 @@ string AttackBoost::getName()
     Name = InputName;
 }
 
-void AttackBoost::use(character : Character *)
+void AttackBoost::Use(Character *character)
 {
+    character->SetAttack(character->GetAttack() + AttackIncrease);
+    cout << "공격력이 " << AttackIncrease << "만큼 증가했습니다." << endl;
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "IItem.h"
 
 using namespace std;
 
@@ -12,6 +13,6 @@ private:
 
 public:
     AttackBoost();
-    string getName();
-    void use(character : Character *);
+    string GetName() override;
+    void Use(Character *character) override;
 };
