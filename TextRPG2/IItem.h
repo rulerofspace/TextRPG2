@@ -9,7 +9,7 @@ using namespace std;
 class IItem
 {
 public:
-    ~IItem() = default;
-    virtual string GetName() = 0;
-    virtual void Use(Character *) = 0;
+	~IItem() = default;
+	virtual string GetName() = 0;
+	virtual void Use(Character *character) = 0;
 };
