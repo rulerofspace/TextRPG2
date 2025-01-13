@@ -6,21 +6,21 @@ class Orc : public IMonster
 {
 private:
     /*
-    �����ڸ� private ���� �ع����� �����Ҵ��� ������. �������
-    �׷��� Create��� �Լ��� ���� ���� �����ϰ� �� �� �ִ�.	*/
+    생성자를 private 으로 해버리면 동적할당이 막힌다. 개념숙지
+    그래서 Create라는 함수를 만들어서 직접 생성하게 할 수 있다.	*/
     Orc();
     virtual ~Orc() = default;
 
-public: /* IMonster �θ� Ŭ�������� �޾ƿ� �Լ��� */
+public: /* IMonster 부모 클래스에서 받아온 함수들 */
     virtual void Initialize(string name, int health, int attack) override;
     virtual void Update() override;
 
-public: /* ���� �����Ҵ��� ������ִ� �Լ� */
+public: /* 실제 동적할당을 대신해주는 함수 */
     static Orc *Create(string name, int health, int attack);
     virtual void Free() override;
 };
 
-/* �̷��� public���� �����ڿ� ���ڰ��� �־ �ʱ�ȭ�� �⺻
+/* 이렇게 public으로 생성자에 인자값을 넣어서 초기화가 기본
 *
 class Orc : public IMonster
 {
