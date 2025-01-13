@@ -1,10 +1,10 @@
 #pragma once
 #include <iostream>
 #include <string>
-
+#include "IItem.h"
 using namespace std;
 
-class AttackBoost : IItem
+class AttackBoost : public IItem
 {
 private:
     string Name;
@@ -13,5 +13,5 @@ private:
 public:
     AttackBoost();
     string getName();
-    void use(character : Character *);
+    //void use(class Character::);
 };

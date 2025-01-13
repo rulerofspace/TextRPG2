@@ -6,4 +6,5 @@ IMonster::IMonster()
 
 void IMonster::Free()
 {
+
 }

@@ -1,29 +1,30 @@
 #include "Orc.h"
 
 Orc::Orc()
-    : IMonster{}
+	: IMonster{}
 {
 }
 
-/* ì´ë ‡ê²Œ ì´ë‹ˆì…œë¼ì´ì¦ˆì—ì„œ ì§ì ‘ ì´ˆê¸°í™” í•´ë„ ë˜ê³  ìœ„ì—ì„œ ìƒì„±ìžë¡œ ì´ˆê¸°í™” í•´ë„ ë¨*/
+/* ÀÌ·¸°Ô ÀÌ´Ï¼È¶óÀÌÁî¿¡¼­ Á÷Á¢ ÃÊ±âÈ­ ÇØµµ µÇ°í À§¿¡¼­ »ý¼ºÀÚ·Î ÃÊ±âÈ­ ÇØµµ µÊ*/
 void Orc::Initialize(string name, int health, int attack)
 {
-    mName = name;
-    mHealth = health;
-    mAttack = attack;
+	mName = name;
+	mHealth = health;
+	mAttack = attack;
 }
 
 void Orc::Update()
 {
+
 }
 
-Orc *Orc::Create(string name, int health, int attack)
+Orc* Orc::Create(string name, int health, int attack)
 {
-    Orc *pOrc = new Orc();
+	Orc* pOrc = new Orc();
 
-    pOrc->Initialize(name, health, attack);
+	pOrc->Initialize(name, health, attack);
 
-    return pOrc;
+	return pOrc;
 }
 
 void Orc::Free()

@@ -6,26 +6,25 @@ using namespace std;
 class IMonster abstract
 {
 protected:
-    IMonster();
-    virtual ~IMonster() = default;
+	IMonster();
+	virtual ~IMonster() = default;
 
 public:
-    /**
-     * ëì— = 0ì„ ë¶™ì¸ ìˆœìˆ˜ê°€ìƒí•¨ìˆ˜ë¼ëŠ” ëœ»ì´ë©° ì„ ì–¸ë§Œ í•˜ëŠ” ê²ƒ
-     * ìì‹í´ë˜ìŠ¤ëŠ” = 0 ì´ ë¶™ì€ í•¨ìˆ˜ë¥¼ ë¬´ì¡°ê±´ êµ¬í˜„í•´ì•¼ë¨	*/
-    virtual void Initialize(string name, int health, int attack) = 0;
-    virtual void Update() = 0;
+	/**
+	* ³¡¿¡ = 0À» ºÙÀÎ ¼ø¼ö°¡»óÇÔ¼ö¶ó´Â ¶æÀÌ¸ç ¼±¾ğ¸¸ ÇÏ´Â °Í
+	* ÀÚ½ÄÅ¬·¡½º´Â = 0 ÀÌ ºÙÀº ÇÔ¼ö¸¦ ¹«Á¶°Ç ±¸ÇöÇØ¾ßµÊ	*/
+	virtual void Initialize(string name, int health, int attack) = 0;
+	virtual void Update() = 0;
+	
+	virtual string GetName() const { return mName; }
 
-    virtual string GetName() const { return mName; }
-
-    virtual int GetHealth() const { return mHealth; }
-    virtual int GetAttack() const { return mAttack; }
+	virtual int GetHealth() const { return mHealth; }
+	virtual int GetAttack() const { return mAttack; }
 
 protected:
-    string mName{};
-    int mHealth{0};
-    int mAttack{0};
-
+	string		mName{};
+	int			mHealth{ 0 };
+	int			mAttack{ 0 };
 public:
-    virtual void Free();
+	virtual void Free();
 };

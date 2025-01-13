@@ -1,6 +1,6 @@
 #include "AttackBoost.h"
 
-AttackBoost::AttackBoost();
+//AttackBoost::AttackBoost();
 
 string AttackBoost::getName()
 {
@@ -9,8 +9,9 @@ string AttackBoost::getName()
     cin.ignore();
     getline(cin, InputName);
     Name = InputName;
+    return Name;
 }
 
-void AttackBoost::use(character : Character *)
-{
-}
+//void AttackBoost::use(character::Character *)
+//{
+//}

@@ -1,18 +1,17 @@
 #include <iostream>
 #include "Character.h"
 
-Character *Character::Instance = nullptr;
+Character* Character::Instance = nullptr;
 
 Character::Character(string name)
     : Name(name), Level(1), MaxLevel(10), Health(200),
-      MaxHealth(200), Attack(30), Experience(0), Gold(0)
+    MaxHealth(200), Attack(30), Experience(0), Gold(0)
 {
 }
 
-Character *Character::GetInstance(string name)
+Character* Character::GetInstance(string name)
 {
-    if (!Instance && !name.empty())
-    {
+    if (!Instance && !name.empty()) {
         Instance = new Character(name);
     }
     return Instance;
@@ -28,16 +27,20 @@ int Character::GetLevel()
     return Level;
 }
 
-double Character::GetHealth()
+int Character::SetLevel(int level)
 {
-    if (Health <= 0)
-        Health = 0;
-    return Health;
+    Level = level;
+    return Level;
 }
 
-double Character::GetAttack()
+int Character::GetMaxLevel()
 {
-    return Attack;
+    return MaxLevel;
+}
+
+double Character::GetHealth()
+{
+    return Health;
 }
 
 void Character::SetHealth(double health)
@@ -50,11 +53,15 @@ void Character::SetHealth(double health)
     {
         Health = health;
     }
-    else
+    else if (Health <= 0)
     {
-        cout << "불가능합니다.\n";
-        return;
+        Health = 0;
     }
+}
+
+double Character::GetAttack()
+{
+    return Attack;
 }
 
 void Character::SetAttack(double attack)
@@ -65,8 +72,7 @@ void Character::SetAttack(double attack)
 void Character::TakeDamage(double damage)
 {
     Health -= damage;
-    if (Health < 0)
-        Health = 0;
+    if (Health < 0) Health = 0;
 }
 
 double Character::GetExperience()
