@@ -42,7 +42,7 @@ public:
     void DisplayInventory();
     void LevelUp();
     void UseItem(int index);
-    vector<pair<class IItem*, int>> Inventory;
+    vector<pair<IItem*, int>> Inventory;
     void AddExperience(double amount);
     void AddGold(double amount);
     void AddItem(IItem* item);
