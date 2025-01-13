@@ -1,4 +1,5 @@
 #include "AttackBoost.h"
+#include "Character.h"
 
 AttackBoost::AttackBoost():Name("AttackBoostItem"), AttackIncrease(20)
 {
@@ -11,6 +12,7 @@ string AttackBoost::GetName()
     cin.ignore();
     getline(cin, InputName);
     Name = InputName;
+    return Name;
 }
 
 void AttackBoost::Use(Character *character)
