@@ -3,7 +3,6 @@
 #include <stdint.h>
 #include <Windows.h>
 #include <iostream>
-#include <dinput.h>
 #include <string>
 #include <vector>
 

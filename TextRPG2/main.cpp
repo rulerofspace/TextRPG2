@@ -17,23 +17,9 @@ int main()
 	{
 		pMainApp->Update();
 		pMainApp->Render();
-		
-		///* 눌렀을 때 */
-		if (pGameManager->Key_Down('A'))
-			cout << "A keyDown Test" << endl;
-
-		///* 누르고 있으면 */
-		//if (pGameManager->Key_Pressing('S'))
-		//	cout << "S keyPressing Test" << endl;
-
-		///* 업은 안먹는다 */
-		//if (pGameManager->Key_Up('D'))
-		//	cout << "D keyUp Test" << endl;
 
 		if (pGameManager->KeyPressedThisFrame())
-		{
 			system("pause");
-		}
 		
 		if (bIsInit == false)
 		{
