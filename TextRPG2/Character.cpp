@@ -1,18 +1,17 @@
 #include <iostream>
 #include "Character.h"
 
-Character *Character::Instance = nullptr;
+Character* Character::Instance = nullptr;
 
 Character::Character(string name)
     : Name(name), Level(1), Health(200),
-      MaxHealth(200), Attack(30), Experience(0), Gold(0), MaxExperience(0), MaxLevel(10)
+    MaxHealth(200), MaxExperience(100), Attack(30), Experience(0), Gold(0)
 {
 }
 
-Character *Character::GetInstance(string name)
+Character* Character::GetInstance(string name)
 {
-    if (!Instance && !name.empty())
-    {
+    if (!Instance && !name.empty()) {
         Instance = new Character(name);
     }
     return Instance;
@@ -31,7 +30,6 @@ int Character::GetLevel()
 void Character::SetLevel(int level)
 {
     Level = level;
-    return Level;
 }
 
 double Character::GetHealth()
@@ -68,8 +66,7 @@ void Character::SetAttack(double attack)
 void Character::TakeDamage(double damage)
 {
     Health -= damage;
-    if (Health < 0)
-        Health = 0;
+    if (Health < 0) Health = 0;
 }
 
 double Character::GetExperience()
@@ -89,8 +86,8 @@ double Character::GetGold()
 
 void Character::DisplayStatus()
 {
-    cout << "\n현재 레벨 : " << Level << "레벨 " << Experience / MaxExperience * 100 << "경험치\n";
-    cout << "현재 체력 : " << Health << " / " << MaxHealth << "(" << Health / MaxHealth << ")\n";
+    cout << "\n현재 레벨 : " << Level << "레벨 " << Experience / MaxExperience * 100 << "% 경험치\n";
+    cout << "현재 체력 : " << Health << " / " << MaxHealth << " (" << Health / MaxHealth * 100 << "%)\n";
     cout << "현재 공격력 : " << Attack << "\n";
     cout << "현재 보유 골드 : " << Gold << "\n\n";
 }
@@ -115,10 +112,7 @@ void Character::LevelUp()
         MaxExperience += 10;
         cout << "\nLevel up! 현재 레벨은 " << Level << "입니다.\n";
     }
-    if (Level == MaxLevel)
-    {
-        cout << "\n현재 최대 레벨입니다.\n";
-    }
+    if (Level == MaxLevel) { cout << "\n현재 최대 레벨입니다.\n"; }
 }
 
 void Character::UseItem(int index)
@@ -127,5 +121,20 @@ void Character::UseItem(int index)
     {
         cout << Inventory[index].first->GetName() << "을(를) 사용합니다.\n";
         Inventory[index].first->Use(GetInstance(Name));
+        // 수량 소모
+    }
+}
+
+void Character::AddExperience(double amount) { Experience += amount; }
+void Character::AddGold(double amount) { Gold += amount; }
+
+void Character::AddItem(IItem* item)
+{
+    for (int i = 0; i < Inventory.size(); i++) {
+        if (Inventory[i].first == item->GetName()) {
+            Inventory[i].second++;
+            delete item;
+            return;
+        }
     }
 }
