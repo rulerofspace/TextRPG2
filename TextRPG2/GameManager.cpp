@@ -154,7 +154,7 @@ void GameManager::Battle(Character* player)
 					player->AddGold(gold);
 					cout << "\n전투에서 승리했습니다.\n50의 경험치와 " << gold << " 골드를 획득!\n";
 
-					Item* DroppedItem = Monster->dropItem();
+					Item* DroppedItem = Monster->DropItem();
 					if (DroppedItem) {
 						player->AddItem(DroppedItem); // 플레이어의 인벤토리에 아이템 추가
 						cout << "몬스터가 " << DroppedItem->getName() << "을 떨어뜨렸습니다.\n";
