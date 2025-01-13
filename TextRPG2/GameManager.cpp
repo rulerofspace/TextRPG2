@@ -3,36 +3,47 @@
 #include "Character.h"
 #include "IMonster.h"
 
-IMonster* GenerateMonster(int level)
+GameManager* GameManager::Instance = nullptr;
+
+GameManager* GameManager::GetInstance()
 {
-	if (level % 10 == 0)
+	if (Instance == nullptr)
 	{
-		cout << "보스 몬스터를 조우했습니다.\n";
-		switch (level % 40)
-		{
-		case 0: return new BossMonster(level, Troll); break;
-		case 10: return new BossMonster(level, Slime); break;
-		case 20: return new BossMonster(level, Goblin); break;
-		case 30: return new BossMonster(level, Orc); break;
-		}
+		Instance = new GameManager();
 	}
-	else
-	{
-		cout << "일반 몬스터를 조우했습니다.\n";
-		switch (level % 4)
-		{
-		case 0: return new Troll(level); break;
-		case 1: return new Slime(level); break;
-		case 2: return new Goblin(level); break;
-		case 3: return new Orc(level); break;
-		}
-	}
+	return Instance;
 }
 
-void battle(Character* player)
+//IMonster* GameManager::GenerateMonster(int level)
+//{
+//	/*if (level % 10 == 0)
+//	{
+//		cout << "보스 몬스터를 조우했습니다.\n";
+//		switch (level % 40)
+//		{
+//		case 0: return new BossMonster(level, Troll); break;
+//		case 10: return new BossMonster(level, Slime); break;
+//		case 20: return new BossMonster(level, Goblin); break;
+//		case 30: return new BossMonster(level, Orc); break;
+//		}
+//	}
+//	else
+//	{
+//		cout << "일반 몬스터를 조우했습니다.\n";
+//		switch (level % 4)
+//		{
+//		case 0: return new Troll(level); break;
+//		case 1: return new Slime(level); break;
+//		case 2: return new Goblin(level); break;
+//		case 3: return new Orc(level); break;
+//		}
+//	}*/
+//}
+
+void GameManager::Battle(Character* player)
 {
 	int level = player->GetLevel();
-	GenerateMonster(level);
+	//GameManager::GenerateMonster(level);
 	while (true)
 	{
 		cout << "\n메뉴\n1. 스탯 창 보기     2. 아이템 사용     3. 전투하기     4.도망가기\n";
@@ -64,12 +75,12 @@ void battle(Character* player)
 
 }
 
-void VisitShop(Character* player)
+void GameManager::VisitShop(Character* player)
 {
 
 }
 
-void Exit()
+void GameManager::Exit()
 {
 
 }
