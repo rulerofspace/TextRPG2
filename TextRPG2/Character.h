@@ -1,4 +1,5 @@
 #pragma once
+
 #include "IItem.h"
 #include <string>
 #include <vector>
@@ -19,7 +20,7 @@ private:
     double Experience; // 경험치
     double MaxExperience; // 최대 경험치
     double Gold; // 돈
-    vector<pair<IItem* , int>> Inventory;
+    vector<pair<class IItem* , int>> Inventory;
 
     Character(string name);
     Character(const Character&) = delete;
@@ -28,7 +29,7 @@ public:
     static Character* GetInstance(string name = "");
     string GetName();
     int GetLevel();
-    int SetLevel(int level);
+    void SetLevel(int level);
     double GetHealth();
     void SetHealth(double health);
     double GetAttack();

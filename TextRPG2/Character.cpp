@@ -27,7 +27,7 @@ int Character::GetLevel()
     return Level;
 }
 
-int Character::SetLevel(int level)
+void Character::SetLevel(int level)
 {
     Level = level;
 }
