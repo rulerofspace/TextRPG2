@@ -1,5 +1,5 @@
 #pragma once
-#include "item.h"
+#include "IItem.h"
 #include <string>
 #include <vector>
 #include <map>
@@ -19,7 +19,7 @@ private:
     double Experience; // 경험치
     double MaxExperience; // 최대 경험치
     double Gold; // 돈
-    vector<pair<item*, int>> Inventory;
+    vector<pair<IItem*, int>> Inventory;
 
     Character(string name);
 
