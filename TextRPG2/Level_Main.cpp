@@ -31,7 +31,7 @@ void Level_Main::Update()
 
 	if (m_pGameManager->Key_Down(VK_LEFT))
 	{
-		if ((*m_pPlayerPosX) > 0) 
+		if ((*m_pPlayerPosX) > 0)
 			(*m_pPlayerPosX)--;
 	}
 

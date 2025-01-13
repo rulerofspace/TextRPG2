@@ -1,7 +1,9 @@
 #pragma once
 
+#include "IItem.h"
 #include <string>
 #include <vector>
+#include <map>
 
 using namespace std;
 
@@ -19,14 +21,15 @@ private:
     double MaxExperience; // 최대 경험치
     double Gold; // 돈
 
-    Character(string name);
 
+    Character(string name);
+    Character(const Character&) = delete;
+    Character& operator=(const Character&) = delete;
 public:
     static Character* GetInstance(string name = "");
     string GetName();
     int GetLevel();
-    int SetLevel(int level);
-    int GetMaxLevel();
+    void SetLevel(int level);
     double GetHealth();
     void SetHealth(double health);
     double GetAttack();
@@ -35,4 +38,12 @@ public:
     double GetExperience();
     double GetMaxExperience();
     double GetGold();
+    void DisplayStatus();
+    void DisplayInventory();
+    void LevelUp();
+    void UseItem(int index);
+    vector<pair<IItem*, int>> Inventory;
+    void AddExperience(double amount);
+    void AddGold(double amount);
+    void AddItem(IItem* item);
 };

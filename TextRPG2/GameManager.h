@@ -31,7 +31,11 @@ public: /* For.Level_Manager */
 public:
 	//class IMonster* GenerateMonster(int level);
 
-	bool battle(Character* player);
+	class IMonster* GenerateMonster(int level);
+
+	void StartGame();
+
+	void Battle(Character* player);
 
 	void VisitShop(Character* player);
 

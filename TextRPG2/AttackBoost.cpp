@@ -1,17 +1,17 @@
 #include "AttackBoost.h"
+#include "Character.h"
 
-//AttackBoost::AttackBoost();
-
-string AttackBoost::getName()
+AttackBoost::AttackBoost():Name("AttackBoostItem"), AttackIncrease(20)
 {
-    string InputName;
-    cout << "사용할 아이템이 무엇입니까?" << endl;
-    cin.ignore();
-    getline(cin, InputName);
-    Name = InputName;
+}
+
+string AttackBoost::GetName()
+{
     return Name;
 }
 
-//void AttackBoost::use(character::Character *)
-//{
-//}
+void AttackBoost::Use(Character* character)
+{
+    character->SetAttack(character->GetAttack() + AttackIncrease);
+    cout << "공격력이 " << AttackIncrease << "만큼 증가했습니다." << endl;
+}

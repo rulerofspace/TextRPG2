@@ -2,9 +2,10 @@
 #include <iostream>
 #include <string>
 #include "IItem.h"
+
 using namespace std;
 
-class AttackBoost : public IItem
+class AttackBoost : IItem
 {
 private:
     string Name;
@@ -12,6 +13,6 @@ private:
 
 public:
     AttackBoost();
-    string getName();
-    //void use(class Character::);
+    string GetName() override;
+    void Use(Character *character) override;
 };
