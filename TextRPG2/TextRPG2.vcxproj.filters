@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Monster">
+      <UniqueIdentifier>{84f2f628-0155-4228-9185-61686564ddab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Monster\Orc">
+      <UniqueIdentifier>{8cb07ebe-9bc9-4c65-9695-74bfcfa6fbbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Monster\Goblin">
+      <UniqueIdentifier>{32ec205c-3128-4f16-b9fb-a4b555a3a14e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Monster\Slime">
+      <UniqueIdentifier>{2721665d-3fad-462e-aa56-27376b4d2723}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Monster\Troll">
+      <UniqueIdentifier>{40c71262-4c41-49aa-ae30-b2cb6288cc7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Character">
+      <UniqueIdentifier>{88d11e32-6195-454d-b25b-0fe5b5bba72f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GameManager">
+      <UniqueIdentifier>{b42ba0f8-5971-4121-b9f3-7e54f7d0fa58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Item">
+      <UniqueIdentifier>{2bd3f2bd-4ea8-4606-a098-989cf6cf9b30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Item\HealthPotion">
+      <UniqueIdentifier>{a2038a03-0240-4ebb-b900-ca3e1ccde8fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Item\AttackBoost">
+      <UniqueIdentifier>{bc785933-bca8-4be0-9280-47e9eeb2ea45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Default">
+      <UniqueIdentifier>{a44bc811-c7ca-4192-85d0-a534687c6d3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Orc.cpp">
+      <Filter>소스 파일\Monster\Orc</Filter>
+    </ClCompile>
+    <ClCompile Include="Goblin.cpp">
+      <Filter>소스 파일\Monster\Goblin</Filter>
+    </ClCompile>
+    <ClCompile Include="Slime.cpp">
+      <Filter>소스 파일\Monster\Slime</Filter>
+    </ClCompile>
+    <ClCompile Include="IMonster.cpp">
+      <Filter>소스 파일\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Troll.cpp">
+      <Filter>소스 파일\Monster\Troll</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>소스 파일\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>소스 파일\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="HealthPotion.cpp">
+      <Filter>소스 파일\Item\HealthPotion</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackBoost.cpp">
+      <Filter>소스 파일\Item\AttackBoost</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일\Default</Filter>
+    </ClCompile>
+    <ClCompile Include="IITem.cpp">
+      <Filter>소스 파일\Item</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Orc.h">
+      <Filter>소스 파일\Monster\Orc</Filter>
+    </ClInclude>
+    <ClInclude Include="Goblin.h">
+      <Filter>소스 파일\Monster\Goblin</Filter>
+    </ClInclude>
+    <ClInclude Include="Slime.h">
+      <Filter>소스 파일\Monster\Slime</Filter>
+    </ClInclude>
+    <ClInclude Include="IMonster.h">
+      <Filter>소스 파일\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Troll.h">
+      <Filter>소스 파일\Monster\Troll</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>소스 파일\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>소스 파일\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthPotion.h">
+      <Filter>소스 파일\Item\HealthPotion</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackBoost.h">
+      <Filter>소스 파일\Item\AttackBoost</Filter>
+    </ClInclude>
+    <ClInclude Include="IItem.h">
+      <Filter>소스 파일\Item</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
