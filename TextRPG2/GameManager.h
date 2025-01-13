@@ -16,6 +16,8 @@ public:
 
 	IMonster* GenerateMonster(int level);
 
+	void StartGame();
+
 	void Battle(Character* player);
 
 	void VisitShop(Character* player);

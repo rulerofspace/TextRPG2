@@ -5,7 +5,7 @@ Character* Character::Instance = nullptr;
 
 Character::Character(string name)
     : Name(name), Level(1), Health(200),
-    MaxHealth(200), Attack(30), Experience(0), Gold(0)
+    MaxHealth(200), MaxExperience(100), Attack(30), Experience(0), Gold(0)
 {
 }
 
@@ -86,8 +86,8 @@ double Character::GetGold()
 
 void Character::DisplayStatus()
 {
-    cout << "\n현재 레벨 : " << Level << "레벨 " << Experience / MaxExperience * 100 << "경험치\n";
-    cout << "현재 체력 : " << Health << " / " << MaxHealth << "(" << Health / MaxHealth << ")\n";
+    cout << "\n현재 레벨 : " << Level << "레벨 " << Experience / MaxExperience * 100 << "% 경험치\n";
+    cout << "현재 체력 : " << Health << " / " << MaxHealth << " (" << Health / MaxHealth * 100 << "%)\n";
     cout << "현재 공격력 : " << Attack << "\n";
     cout << "현재 보유 골드 : " << Gold << "\n\n";
 }

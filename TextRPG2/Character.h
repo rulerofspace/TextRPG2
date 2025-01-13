@@ -20,7 +20,7 @@ private:
     double Experience; // 경험치
     double MaxExperience; // 최대 경험치
     double Gold; // 돈
-    vector<pair<class IItem* , int>> Inventory;
+
 
     Character(string name);
     Character(const Character&) = delete;
@@ -42,4 +42,5 @@ public:
     void DisplayInventory();
     void LevelUp();
     void UseItem(int index);
+    vector<pair<class IItem*, int>> Inventory;
 };
