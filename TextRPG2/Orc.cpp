@@ -5,7 +5,6 @@ Orc::Orc()
 {
 }
 
-/* 이렇게 이니셜라이즈에서 직접 초기화 해도 되고 위에서 생성자로 초기화 해도 됨*/
 void Orc::Initialize(string name, int health, int attack)
 {
     mName = name;

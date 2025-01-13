@@ -120,6 +120,6 @@ void Character::UseItem(int index)
     if (index >= 0 && index < Inventory.size())
     {
         cout << Inventory[index].first->GetName() << "을(를) 사용합니다.\n";
-        Inventory[index].first->Use();
+        Inventory[index].first->Use(GetInstance(Name));
     }
 }
