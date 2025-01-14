@@ -1,5 +1,5 @@
 #include "Level_Main.h"
-
+#include "Character.h"
 #include "GameManager.h"
 
 Level_Main::Level_Main()
@@ -53,20 +53,29 @@ void Level_Main::Update()
 			(*m_pPlayerPosX)++;
 	}
 
+	if (m_pGameManager->Key_Down(VK_TAB))
+	{
+		m_bStatusView = !m_bStatusView;
+	}
+
 	m_Map[*m_pPlayerPosY][*m_pPlayerPosX] = 'A';
 }
 
 void Level_Main::Render()
 {
-	system("cls");
 
-	for (int i = 0; i < MAP_HEIGHT; i++) 
+	for (int i = 0; i < MAP_HEIGHT; i++)
 	{
-		for (int j = 0; j < MAP_WIDTH; j++) 
-			cout << m_Map[i][j] << ' ';
-		
-		cout << endl;
+		for (int j = 0; j < MAP_WIDTH; j++) {
+			buffer.push_back(m_Map[i][j]);
+			buffer.push_back(' ');
+		}
+		buffer.push_back('\n');
 	}
+
+	gotoxy(0, 0);
+	cout << buffer;
+	buffer.clear();
 }
 
 Level_Main* Level_Main::Create()

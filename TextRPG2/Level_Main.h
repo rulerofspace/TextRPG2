@@ -16,9 +16,12 @@ public:
 
 private:
 	char m_Map[MAP_HEIGHT][MAP_WIDTH];
+	string buffer{};
 
 	int* m_pPlayerPosX{ nullptr };
 	int* m_pPlayerPosY{ nullptr };
+
+	bool m_bStatusView{ false };
 public:
 	static Level_Main* Create();
 	virtual void Free() override;

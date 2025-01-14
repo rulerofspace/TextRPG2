@@ -11,9 +11,10 @@ Character::Character(string name)
 
 Character* Character::GetInstance(string name)
 {
-    if (!Instance && !name.empty()) {
+
+    if (Instance == nullptr)
         Instance = new Character(name);
-    }
+
     return Instance;
 }
 

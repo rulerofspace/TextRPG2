@@ -12,6 +12,7 @@ void Level_Logo::Initialize()
 	m_iLevelIndex = LEVEL_LOGO;
 
 	m_strLogo = R"(
+
 	` `   `       ` ` ``                                                              ``     ` `  `  `                       ``          ``                                  
 	`   `         ` `` `                                                            ```      ` `   `                        `##`        `           `                        
 	  ##` `       `##  `                                                            `##   `` `########``  ` ````````` `   `  ## `      `##########```   `#################   
@@ -29,22 +30,24 @@ void Level_Logo::Initialize()
 )";
 
 	m_strStart = R"(
+
 		                                                                   Press A To Start                                                                            
 )";
 }
 
 void Level_Logo::Update()
 {
-	/* ´­·¶À» ¶§ */
+	/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ */
 	if (m_pGameManager->Key_Down('A'))
 		m_pGameManager->Change_Level(Level_Main::Create());
 }
 
 void Level_Logo::Render()
 {
-	cout << m_strLogo << endl << endl << endl;
+	system("cls");
+	cout << m_strLogo;
 
-	cout << m_strStart << endl;
+	cout << m_strStart;
 }
 
 Level_Logo* Level_Logo::Create()

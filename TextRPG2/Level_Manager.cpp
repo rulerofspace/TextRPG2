@@ -1,5 +1,4 @@
 #include "Level_Manager.h"
-
 #include "Level.h"
 
 Level_Manager::Level_Manager()
@@ -31,6 +30,9 @@ void Level_Manager::Change_Level(Level* pNewLevel)
 	if(m_pCurrentLevel != nullptr)
 		m_pCurrentLevel->Free();
 
+	cout << flush;
+	cout.clear();
+	system("cls");
 	m_pCurrentLevel = pNewLevel;
 }
 
