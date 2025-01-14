@@ -21,9 +21,9 @@ public:
     void Update(void);
 
 private:
-    int8_t m_byKeyState[256] = {}; // Å°º¸µå¿¡ ÀÖ´Â ¸ðµç Å°°ªÀ» ÀúÀåÇÏ±â À§ÇÑ 
-    BYTE m_byPrevKeyState[256];   // ÀÌÀü Å° »óÅÂº¯¼ö
-    bool m_bKeyState[256] = { false }; // Å°ÀÇ ÇöÀç »óÅÂ¸¦ ÀúÀåÇÏ±â À§ÇÑ º¯¼ö
+    int8_t m_byKeyState[256] = {}; // Å°ï¿½ï¿½ï¿½å¿¡ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ Å°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+    BYTE m_byPrevKeyState[256];   // ï¿½ï¿½ï¿½ï¿½ Å° ï¿½ï¿½ï¿½Âºï¿½ï¿½ï¿½
+    bool m_bKeyState[256] = { false }; // Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 public:
     static Input_Manager* Create(HINSTANCE hInst, HWND hWnd);

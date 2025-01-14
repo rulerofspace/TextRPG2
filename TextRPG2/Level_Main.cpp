@@ -58,15 +58,19 @@ void Level_Main::Update()
 
 void Level_Main::Render()
 {
-	system("cls");
-
-	for (int i = 0; i < MAP_HEIGHT; i++) 
+	
+	for (int i = 0; i < MAP_HEIGHT; i++)
 	{
-		for (int j = 0; j < MAP_WIDTH; j++) 
-			cout << m_Map[i][j] << ' ';
-		
-		cout << endl;
+		for (int j = 0; j < MAP_WIDTH; j++) {
+			buffer.push_back(m_Map[i][j]);
+			buffer.push_back(' ');
+		}
+		buffer.push_back('\n');
 	}
+
+	gotoxy(0, 0);
+	cout << buffer;
+	buffer.clear();
 }
 
 Level_Main* Level_Main::Create()

@@ -20,7 +20,7 @@ void Input_Manager::Update()
     {
         m_byKeyState[i] = GetKeyState(i);
 
-        // 0x8000 ºñÆ®°¡ ÄÑÁ® ÀÖÀ¸¸é Å°°¡ ´­·Á ÀÖ´Ù°í ÆÇ´Ü
+        // 0x8000 ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ù°ï¿½ ï¿½Ç´ï¿½
         m_bKeyState[i] = (m_byKeyState[i] & 0x8000) != 0;
     }
 }
@@ -42,7 +42,7 @@ bool Input_Manager::Key_Up(unsigned int _iKey)
 
 bool Input_Manager::KeyPressedThisFrame()
 {
-    // ÇöÀç Å° »óÅÂ¿¡¼­ ´­·ÁÁø Å°°¡ ÇÏ³ª¶óµµ ÀÖÀ¸¸é true¸¦ ¹ÝÈ¯
+    // ï¿½ï¿½ï¿½ï¿½ Å° ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å°ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ trueï¿½ï¿½ ï¿½ï¿½È¯
     for (int i = 0; i < 256; ++i) 
     {
         if (m_bKeyState[i])
