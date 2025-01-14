@@ -63,10 +63,8 @@ void Level_Main::Update()
 
 void Level_Main::Render()
 {
-	/* �ӽ÷� Stat â���� �ϴ� �� �������� ���ƺ��� */
 	if (m_bStatusView == false)
 	{
-		system("cls");
 
 		for (int i = 0; i < MAP_HEIGHT; i++) 
 		{
