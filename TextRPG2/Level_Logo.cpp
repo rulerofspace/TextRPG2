@@ -61,5 +61,13 @@ Level_Logo* Level_Logo::Create()
 
 void Level_Logo::Free()
 {
+	system("cls");
+	m_pGameManager->EnableEcho();
+	string name{};
+	cout << "이름을 입력하세요: ";
+	cin >> name;
+	Character::GetInstance(name);
+	m_pGameManager->DisableEcho();
+
 	__super::Free();
 }
