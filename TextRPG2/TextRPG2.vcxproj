@@ -133,7 +133,7 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Goblin.cpp" />
     <ClCompile Include="HealthPotion.cpp" />
-    <ClCompile Include="IITem.cpp" />
+    <ClCompile Include="IItem.cpp" />
     <ClCompile Include="IMonster.cpp" />
     <ClCompile Include="Input_Manager.cpp" />
     <ClCompile Include="Level.cpp" />

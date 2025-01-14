@@ -1,17 +1,17 @@
 #include "GameManager.h"
 #include "MainApp.h"
+#include <locale>
 
 void DisableCursorBlinking();
 bool IsAnyKeyPressed();
-
 
 int main()
 {
 	DisableCursorBlinking();
 
-	MainApp* pMainApp = MainApp::Create();
+	MainApp *pMainApp = MainApp::Create();
 
-	GameManager* pGameManager = GameManager::Get_Instance();
+	GameManager *pGameManager = GameManager::Get_Instance();
 	pGameManager->DisableEcho();
 
 	bool bIsInit = false;
@@ -22,20 +22,18 @@ int main()
 
 		if (pGameManager->KeyPressedThisFrame())
 			system("pause");
-		
+
 		if (bIsInit == false)
 		{
 			system("pause");
 			bIsInit = true;
 		}
-
-		//system("cls");
 	}
 }
 
-bool IsAnyKeyPressed() 
+bool IsAnyKeyPressed()
 {
-	for (int key = 0; key < 256; ++key) 
+	for (int key = 0; key < 256; ++key)
 	{
 		if (GetAsyncKeyState(key) & 0x8000)
 			return true;
