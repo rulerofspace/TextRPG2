@@ -1,5 +1,6 @@
 #include "GameManager.h"
 #include "MainApp.h"
+#include <locale>
 
 void DisableEcho();
 void DisableCursorBlinking();
@@ -8,6 +9,9 @@ bool IsAnyKeyPressed();
 
 int main()
 {
+	std::wcout.imbue(std::locale(""));
+	SetConsoleOutputCP(CP_UTF8);
+
 	DisableEcho();
 	DisableCursorBlinking();
 
