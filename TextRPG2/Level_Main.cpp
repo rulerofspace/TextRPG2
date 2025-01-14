@@ -63,7 +63,7 @@ void Level_Main::Update()
 
 void Level_Main::Render()
 {
-	/* ÀÓ½Ã·Î Stat Ã¢À¸·Î ÀÏ´Ü ¸Ê ·»´õ¸µÀ» ¸·¾Æº¸ÀÚ */
+	/* ï¿½Ó½Ã·ï¿½ Stat Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æºï¿½ï¿½ï¿½ */
 	if (m_bStatusView == false)
 	{
 		system("cls");
@@ -80,6 +80,10 @@ void Level_Main::Render()
 	{
 		Character::GetInstance()->DisplayStatus();
 	}
+
+	gotoxy(0, 0);
+	cout << buffer;
+	buffer.clear();
 }
 
 Level_Main* Level_Main::Create()
