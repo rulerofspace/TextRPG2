@@ -6,8 +6,8 @@
 class Level_Main final : public Level
 {
 public:
-	enum CURRENT_VIEW { VIEW_STATUS, VIEW_MAP, VIEW_END };
-	enum CURRENT_MAP { MAP_VILLAGE, MAP_DUNGEON, MAP_SHOP, MAP_END };
+	enum VIEW { VIEW_STATUS, VIEW_MAP, VIEW_END };
+	enum MAP { MAP_VILLAGE, MAP_DUNGEON, MAP_SHOP, MAP_END };
 private:
 	Level_Main();
 	virtual ~Level_Main() = default;
@@ -29,8 +29,8 @@ private:
 	int* m_pPlayerPosX{ nullptr };
 	int* m_pPlayerPosY{ nullptr };
 
-	CURRENT_VIEW	m_eCurView{ VIEW_MAP };
-	CURRENT_MAP		m_eCurMap{ MAP_VILLAGE };
+	VIEW	m_eCurView{ VIEW_MAP };
+	MAP		m_eCurMap{ MAP_VILLAGE };
 public:
 	static Level_Main* Create();
 	virtual void Free() override;

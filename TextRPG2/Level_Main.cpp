@@ -131,6 +131,10 @@ void Level_Main::Check_Collision_Potal()
 		if (*m_pPlayerPosY == 0 && (*m_pPlayerPosX == MAP_WIDTH / 2 || *m_pPlayerPosX == MAP_WIDTH / 2 + 1))
 		{
 			m_eCurMap = MAP_DUNGEON;
+
+			/* 여기가 던전 충돌되서 맵바꾸는 곳 */
+			//GameManager::Get_Instance()->Change_Level(Level_BattleFiled::Create());
+
 			*m_pPlayerPosY = MAP_HEIGHT - 2;
 		}
 
