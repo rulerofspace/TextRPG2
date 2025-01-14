@@ -18,11 +18,11 @@ int main()
 	bool bIsInit = false;
 	while (true)
 	{
-			system("pause");
 		pMainApp->Update();
 		pMainApp->Render();
 
-//		if (pGameManager->KeyPressedThisFrame())
+		if (pGameManager->KeyPressedThisFrame())
+			system("pause");
 		
 		if (bIsInit == false)
 		{
