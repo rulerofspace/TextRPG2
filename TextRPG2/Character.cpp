@@ -121,7 +121,7 @@ void Character::UseItem(int index)
     {
         cout << Inventory[index].first->GetName() << "을(를) 사용합니다.\n";
         Inventory[index].first->Use(GetInstance(Name));
-        // 수량 소모
+        Inventory[index].second--;
     }
 }
 

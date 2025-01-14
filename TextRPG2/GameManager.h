@@ -1,5 +1,6 @@
 #pragma once
 #include "Character.h"
+#include "IMonster.h"
 #include "Client_Defines.h"
 using namespace std;
 
@@ -35,7 +36,7 @@ public:
 
 	void StartGame();
 
-	void Battle(Character* player);
+	void Battle(IMonster* Monster);
 
 	void VisitShop(Character* player);
 

@@ -5,7 +5,7 @@ Orc::Orc()
 {
 }
 
-/* ÀÌ·¸°Ô ÀÌ´Ï¼È¶óÀÌÁî¿¡¼­ Á÷Á¢ ÃÊ±âÈ­ ÇØµµ µÇ°í À§¿¡¼­ »ý¼ºÀÚ·Î ÃÊ±âÈ­ ÇØµµ µÊ*/
+/* ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½Ì´Ï¼È¶ï¿½ï¿½ï¿½ï¿½î¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½Øµï¿½ ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Ê±ï¿½È­ ï¿½Øµï¿½ ï¿½ï¿½*/
 void Orc::Initialize(string name, int health, int attack)
 {
 	mName = name;
@@ -19,6 +19,15 @@ void Orc::Update()
 }
 
 Orc* Orc::Create(string name, int health, int attack)
+{
+	Orc* pOrc = new Orc();
+
+	pOrc->Initialize(name, health, attack);
+
+	return pOrc;
+}
+
+Orc* Orc::CreateBoss(string name, int health, int attack)
 {
 	Orc* pOrc = new Orc();
 
