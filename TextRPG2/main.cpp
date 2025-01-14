@@ -1,8 +1,6 @@
 #include "GameManager.h"
 #include "MainApp.h"
 
-void ResizeConsoleNoScroll(int width, int height);
-void SetConsoleFontSize(int fontWidth, int fontHeight);
 void DisableEcho();
 void DisableCursorBlinking();
 bool IsAnyKeyPressed();
