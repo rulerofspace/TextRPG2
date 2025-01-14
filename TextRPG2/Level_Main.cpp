@@ -1,5 +1,5 @@
 #include "Level_Main.h"
-
+#include "Character.h"
 #include "GameManager.h"
 
 Level_Main::Level_Main()
@@ -53,19 +53,32 @@ void Level_Main::Update()
 			(*m_pPlayerPosX)++;
 	}
 
+	if (m_pGameManager->Key_Down(VK_TAB))
+	{
+		m_bStatusView = !m_bStatusView;
+	}
+
 	m_Map[*m_pPlayerPosY][*m_pPlayerPosX] = 'A';
 }
 
 void Level_Main::Render()
 {
-	system("cls");
-
-	for (int i = 0; i < MAP_HEIGHT; i++) 
+	/* 임시로 Stat 창으로 일단 맵 렌더링을 막아보자 */
+	if (m_bStatusView == false)
 	{
-		for (int j = 0; j < MAP_WIDTH; j++) 
-			cout << m_Map[i][j] << ' ';
+		system("cls");
+
+		for (int i = 0; i < MAP_HEIGHT; i++) 
+		{
+			for (int j = 0; j < MAP_WIDTH; j++) 
+				cout << m_Map[i][j] << ' ';
 		
-		cout << endl;
+			cout << endl;
+		}
+	}
+	else
+	{
+		Character::GetInstance()->DisplayStatus();
 	}
 }
 

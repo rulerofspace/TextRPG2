@@ -19,6 +19,8 @@ private:
 
 	int* m_pPlayerPosX{ nullptr };
 	int* m_pPlayerPosY{ nullptr };
+
+	bool m_bStatusView{ false };
 public:
 	static Level_Main* Create();
 	virtual void Free() override;
