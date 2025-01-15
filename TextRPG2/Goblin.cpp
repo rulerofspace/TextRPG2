@@ -8,7 +8,7 @@
 using namespace std;
 
 // 고블린이 죽었을때 드롭될 아이템 목록
-const vector<string> ITEM_POOL = { "Middle Grade Weapon", "AttackBoostItem", "Goblin Nail" };
+const vector<string> ITEM_POOL = { "Middle Grade Weapon", "AttackBoostItem", "Goblin Nail", "Gold" };
 
 Goblin::Goblin()
 	: IMonster{}
